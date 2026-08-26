@@ -1,0 +1,66 @@
+cmake_minimum_required(VERSION 3.16)
+if (APPLE)
+    project(cpp_refactoring CXX OBJCXX)
+else()
+    project(cpp_refactoring CXX)
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+include(FetchContent)
+FetchContent_Declare(
+    googletest
+    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_TAG v1.14.0
+)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+if (WIN32)
+    set(HTTP_CLIENT_SOURCE src/legacycode/HttpGet_win.cpp)
+elseif (APPLE)
+    set(HTTP_CLIENT_SOURCE src/legacycode/HttpGet_mac.mm)
+endif()
+
+add_library(refactoring_core
+    src/comments/X1.cpp
+    src/divergentchange/CustomerService.cpp
+    src/duplication/Forecast.cpp
+    src/duplication/WeatherReport.cpp
+    src/featureenvy/Product.cpp
+    src/featureenvy/PriceCalculator.cpp
+    src/legacycode/Order.cpp
+    src/legacycode/ShippingCalculator.cpp
+    ${HTTP_CLIENT_SOURCE}
+    src/longmethod/Customer.cpp
+    src/longmethod/Order.cpp
+    src/longmethod/OrderItem.cpp
+    src/longmethod/OrderSummary.cpp
+    src/longparameterlist/ShippingNoteGenerator.cpp
+)
+target_include_directories(refactoring_core PUBLIC src)
+
+if (WIN32)
+    target_link_libraries(refactoring_core PUBLIC winhttp)
+elseif (APPLE)
+    target_link_libraries(refactoring_core PUBLIC "-framework Foundation")
+endif()
+
+add_executable(shipping_app src/legacycode/ShippingApp.cpp)
+target_link_libraries(shipping_app PRIVATE refactoring_core)
+
+enable_testing()
+
+add_executable(refactoring_tests
+    tests/comments/X1Test.cpp
+    tests/divergentchange/CustomerServiceTest.cpp
+    tests/duplication/WeatherReportTest.cpp
+    tests/featureenvy/PriceCalculatorTest.cpp
+    tests/longmethod/OrderTest.cpp
+    tests/longparameterlist/ShippingNoteGeneratorTest.cpp
+)
+target_link_libraries(refactoring_tests PRIVATE refactoring_core GTest::gtest_main)
+
+include(GoogleTest)
+gtest_discover_tests(refactoring_tests)
