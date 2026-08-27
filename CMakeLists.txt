@@ -40,5 +40,9 @@ add_executable(refactoring_tests
 )
 target_link_libraries(refactoring_tests PRIVATE refactoring_core GTest::gtest_main)
 
+if(MINGW)
+    target_link_options(refactoring_tests PRIVATE -static-libgcc -static-libstdc++ -static)
+endif()
+
 include(GoogleTest)
 gtest_discover_tests(refactoring_tests)
