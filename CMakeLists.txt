@@ -31,7 +31,7 @@ target_include_directories(refactoring_core PUBLIC src)
 enable_testing()
 
 add_executable(refactoring_tests
-    tests/comments/X1Test.cpp
+    tests/comments/MathematicalOperationsTest.cpp
     tests/divergentchange/CustomerServiceTest.cpp
     tests/duplication/WeatherReportTest.cpp
     tests/featureenvy/PriceCalculatorTest.cpp
