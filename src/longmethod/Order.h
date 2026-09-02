@@ -26,6 +26,12 @@ private:
     std::optional<std::vector<OrderItem>> items_;
     Customer customer_;
 
+    struct TaxInformation
+    {
+        double taxableAmount = {};
+        double tax = {};
+    };
+
     double calculateSubtotal() const;
     void validate() const;
     double calculateDiscount(double subtotal) const;
