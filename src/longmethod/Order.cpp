@@ -26,7 +26,7 @@ double Order::calculateTotal(const double subtotal, const double discount, doubl
 {
     taxableAmount = subtotal - discount;
     tax = taxableAmount * 0.20;
-    double total = calculateTotalImpl(taxableAmount, tax);
+    double total = taxableAmount + tax;
     return total;
 }
 
