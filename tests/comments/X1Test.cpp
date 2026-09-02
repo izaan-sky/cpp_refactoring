@@ -4,7 +4,7 @@
 
 using refactoring::comments::MathematicalOperations;
 
-TEST(MathematicalOperationsTest, t1) {
+TEST(MathematicalOperationsTest, sumsSquaresFrom7To12) {
     int a = 7;
     int b = 12;
 
