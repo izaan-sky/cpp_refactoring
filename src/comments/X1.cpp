@@ -6,7 +6,6 @@ int X1::m(int lowerBound, int upperBound) {
     int p = 0;
 
     for (int i = lowerBound; i <= upperBound; i++) {
-        // Add square of each number in the range
         p += square(i);
     }
 
