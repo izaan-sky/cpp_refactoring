@@ -6,8 +6,6 @@ Order::Order(std::optional<std::vector<OrderItem>> items, Customer customer)
     : items_(std::move(items)), customer_(customer) {}
 
 OrderSummary Order::summarise() const {
-
-    // Validation
     validate();
 
     // Subtotal calculation
