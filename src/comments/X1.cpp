@@ -7,14 +7,14 @@ int X1::m(int lowerBound, int upperBound) {
 
     for (int i = lowerBound; i <= upperBound; i++) {
         // Add square of each number in the range
-        p += n(i);
+        p += square(i);
     }
 
     // Return accumulated sum
     return p;
 }
 
-int X1::n(int k) {
+int X1::square(int k) {
     // Return square of input
     return k * k;
 }
