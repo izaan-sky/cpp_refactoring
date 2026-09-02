@@ -13,7 +13,6 @@ int X1::sumSquaresInRange(int lowerBound, int upperBound) {
 }
 
 int X1::square(int input) {
-    // Return square of input
     return input * input;
 }
 
