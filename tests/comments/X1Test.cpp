@@ -4,7 +4,7 @@
 
 using refactoring::comments::MathematicalOperations;
 
-TEST(X1Test, t1) {
+TEST(MathematicalOperationsTest, t1) {
     int a = 7;
     int b = 12;
 
