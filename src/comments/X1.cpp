@@ -12,9 +12,9 @@ int X1::sumSquaresInRange(int lowerBound, int upperBound) {
     return sum;
 }
 
-int X1::square(int k) {
+int X1::square(int input) {
     // Return square of input
-    return k * k;
+    return input * input;
 }
 
 } // namespace refactoring::comments
