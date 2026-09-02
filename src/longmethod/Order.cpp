@@ -8,12 +8,7 @@ Order::Order(std::optional<std::vector<OrderItem>> items, Customer customer)
 OrderSummary Order::summarise() const {
 
     // Validation
-    if (!items_.has_value()) {
-        throw IllegalStateException("Items cannot be null");
-    }
-    if (items_->empty()) {
-        throw IllegalStateException("Order must contain items");
-    }
+    validate();
 
     // Subtotal calculation
     double subtotal = 0.0;
@@ -37,6 +32,18 @@ OrderSummary Order::summarise() const {
     double total = taxableAmount + tax;
 
     return OrderSummary(subtotal, discount, tax, total);
+}
+
+void Order::validate() const
+{
+    if (!items_.has_value())
+    {
+        throw IllegalStateException("Items cannot be null");
+    }
+    if (items_->empty())
+    {
+        throw IllegalStateException("Order must contain items");
+    }
 }
 
 } // namespace refactoring::longmethod

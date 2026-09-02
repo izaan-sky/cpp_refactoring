@@ -22,6 +22,8 @@ public:
 
     OrderSummary summarise() const;
 
+    void validate() const;
+
 private:
     std::optional<std::vector<OrderItem>> items_;
     Customer customer_;
