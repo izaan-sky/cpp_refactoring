@@ -17,9 +17,15 @@ OrderSummary Order::summarise() const {
     double tax = taxableAmount * 0.20;
 
     // Total calculation
-    double total = calculateTotal(taxableAmount, tax);
+    double total = calculateTotal(subtotal, discount, taxableAmount, tax);
 
     return OrderSummary(subtotal, discount, tax, total);
+}
+
+double Order::calculateTotal(const double subtotal, const double discount, double &taxableAmount, double &tax) const
+{
+    double total = calculateTotalImpl(taxableAmount, tax);
+    return total;
 }
 
 double Order::calculateDiscount(double subtotal) const
@@ -60,7 +66,7 @@ void Order::validate() const
     }
 }
 
-double Order::calculateTotal(const double taxableAmount, const double tax) const
+double Order::calculateTotalImpl(const double taxableAmount, const double tax) const
 {
     return taxableAmount + tax;
 }
