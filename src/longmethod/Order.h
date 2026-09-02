@@ -22,13 +22,12 @@ public:
 
     OrderSummary summarise() const;
 
-    void calculateSubtotal(double &subtotal) const;
-
-    void validate() const;
-
 private:
     std::optional<std::vector<OrderItem>> items_;
     Customer customer_;
+
+    double calculateSubtotal() const;
+    void validate() const;
 };
 
 } // namespace refactoring::longmethod

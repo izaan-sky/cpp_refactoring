@@ -9,8 +9,7 @@ OrderSummary Order::summarise() const {
     validate();
 
     // Subtotal calculation
-    double subtotal = 0.0;
-    calculateSubtotal(subtotal);
+    double subtotal = calculateSubtotal();
 
     // Discount rules
     double discount = 0.0;
@@ -30,12 +29,15 @@ OrderSummary Order::summarise() const {
     return OrderSummary(subtotal, discount, tax, total);
 }
 
-void Order::calculateSubtotal(double &subtotal) const
+double Order::calculateSubtotal() const
 {
+    double subtotal = 0.0;
     for (const OrderItem &item : *items_)
     {
         subtotal += item.getPrice() * item.getQuantity();
     }
+
+    return subtotal;
 }
 
 void Order::validate() const
