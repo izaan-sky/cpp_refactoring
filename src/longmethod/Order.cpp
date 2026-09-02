@@ -68,9 +68,4 @@ void Order::validate() const
     }
 }
 
-double Order::calculateTotalImpl(const double taxableAmount, const double tax) const
-{
-    return taxableAmount + tax;
-}
-
 } // namespace refactoring::longmethod
