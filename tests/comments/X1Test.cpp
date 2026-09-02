@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "comments/X1.h"
+#include "comments/MathematicalOperations.h"
 
 using refactoring::comments::MathematicalOperations;
 

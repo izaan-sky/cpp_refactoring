@@ -14,7 +14,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 add_library(refactoring_core
-    src/comments/X1.cpp
+    src/comments/MathematicalOperations.cpp
     src/divergentchange/CustomerService.cpp
     src/duplication/Forecast.cpp
     src/duplication/WeatherReport.cpp
