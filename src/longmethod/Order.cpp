@@ -17,7 +17,7 @@ OrderSummary Order::summarise() const {
     double tax = taxableAmount * 0.20;
 
     // Total calculation
-    double total = taxableAmount + tax;
+    double total = calculateTotal(taxableAmount, tax);
 
     return OrderSummary(subtotal, discount, tax, total);
 }
@@ -58,6 +58,11 @@ void Order::validate() const
     {
         throw IllegalStateException("Order must contain items");
     }
+}
+
+double Order::calculateTotal(const double taxableAmount, const double tax) const
+{
+    return taxableAmount + tax;
 }
 
 } // namespace refactoring::longmethod

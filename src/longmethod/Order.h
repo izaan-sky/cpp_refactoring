@@ -29,6 +29,7 @@ private:
     double calculateSubtotal() const;
     void validate() const;
     double calculateDiscount(double subtotal) const;
+    double calculateTotal(const double taxableAmount, const double tax) const;
 
 };
 
