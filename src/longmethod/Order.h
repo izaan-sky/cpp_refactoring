@@ -22,6 +22,8 @@ public:
 
     OrderSummary summarise() const;
 
+    void calculateSubtotal(double &subtotal) const;
+
     void validate() const;
 
 private:
