@@ -8,4 +8,4 @@ public:
     static int square(int k);
 };
 
-} // namespace refactoring::comments
+}
