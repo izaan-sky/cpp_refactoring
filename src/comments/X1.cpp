@@ -2,7 +2,7 @@
 
 namespace refactoring::comments {
 
-int X1::sumSquaresInRange(int lowerBound, int upperBound) {
+int MathematicalOperations::sumSquaresInRange(int lowerBound, int upperBound) {
     int sum = 0;
 
     for (int i = lowerBound; i <= upperBound; i++) {
@@ -12,7 +12,7 @@ int X1::sumSquaresInRange(int lowerBound, int upperBound) {
     return sum;
 }
 
-int X1::square(int input) {
+int MathematicalOperations::square(int input) {
     return input * input;
 }
 
