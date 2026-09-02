@@ -11,12 +11,7 @@ OrderSummary Order::summarise() const {
     double subtotal = calculateSubtotal();
 
     // Discount rules
-    double discount = 0.0;
-    if (customer_.isLoyal()) {
-        discount = subtotal * 0.10;
-    } else if (subtotal > 100) {
-        discount = subtotal * 0.05;
-    }
+    double discount = applyDiscount(subtotal);
 
     // Tax calculation
     double taxableAmount = subtotal - discount;
@@ -26,6 +21,21 @@ OrderSummary Order::summarise() const {
     double total = taxableAmount + tax;
 
     return OrderSummary(subtotal, discount, tax, total);
+}
+
+double Order::applyDiscount(double subtotal) const
+{
+    double discount = 0.0;
+    if (customer_.isLoyal())
+    {
+        discount = subtotal * 0.10;
+    }
+    else if (subtotal > 100)
+    {
+        discount = subtotal * 0.05;
+    }
+
+    return discount;
 }
 
 double Order::calculateSubtotal() const

@@ -28,6 +28,8 @@ private:
 
     double calculateSubtotal() const;
     void validate() const;
+    double applyDiscount(double subtotal) const;
+
 };
 
 } // namespace refactoring::longmethod
