@@ -28,7 +28,7 @@ private:
 
     double calculateSubtotal() const;
     void validate() const;
-    double applyDiscount(double subtotal) const;
+    double calculateDiscount(double subtotal) const;
 
 };
 

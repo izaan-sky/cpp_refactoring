@@ -10,7 +10,7 @@ OrderSummary Order::summarise() const {
 
     double subtotal = calculateSubtotal();
 
-    double discount = applyDiscount(subtotal);
+    double discount = calculateDiscount(subtotal);
 
     // Tax calculation
     double taxableAmount = subtotal - discount;
@@ -22,7 +22,7 @@ OrderSummary Order::summarise() const {
     return OrderSummary(subtotal, discount, tax, total);
 }
 
-double Order::applyDiscount(double subtotal) const
+double Order::calculateDiscount(double subtotal) const
 {
     double discount = 0.0;
     if (customer_.isLoyal())
