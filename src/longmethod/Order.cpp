@@ -12,11 +12,8 @@ OrderSummary Order::summarise() const {
 
     double discount = calculateDiscount(subtotal);
 
-    // Tax calculation
     double taxableAmount = 0.0;
     double tax = 0.0;
-
-    // Total calculation
     double total = calculateTaxAndTotal(subtotal, discount, taxableAmount, tax);
 
     return OrderSummary(subtotal, discount, tax, total);
