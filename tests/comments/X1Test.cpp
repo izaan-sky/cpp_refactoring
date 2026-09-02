@@ -14,7 +14,7 @@ TEST(X1Test, t1) {
         expected += i * i;
     }
 
-    int actual = X1::m(a, b);
+    int actual = X1::sumSquaresInRange(a, b);
 
     EXPECT_EQ(expected, actual);
 }
