@@ -12,4 +12,14 @@ bool Product::isOnSale() const {
     return onSale_;
 }
 
+double Product::calculateFinalPrice() const {
+    double price = getPrice();
+
+    if (isOnSale()) {
+        price = price * 0.8;
+    }
+
+    return price;
+}
+
 } // namespace refactoring::featureenvy

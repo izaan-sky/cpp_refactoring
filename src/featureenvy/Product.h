@@ -8,6 +8,7 @@ public:
 
     double getPrice() const;
     bool isOnSale() const;
+    double calculateFinalPrice() const;
 
 private:
     double price_;
