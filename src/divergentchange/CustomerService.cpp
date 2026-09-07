@@ -14,7 +14,7 @@ bool CustomerService::isValidEmail(const char* email) const {
 }
 
 std::string CustomerService::formatDisplayName(const std::string& firstName, const std::string& lastName) const {
-    return StringManipulation::trim(firstName) + " " + StringManipulation::toUpper(StringManipulation::trim(lastName));
+    return DisplayName::format(firstName, lastName);
 }
 
 int CustomerService::calculateLoyaltyPoints(int numberOfPurchases) const {
