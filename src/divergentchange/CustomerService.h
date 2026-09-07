@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include "divergentchange/StringManipulation.h"
 
 namespace refactoring::divergentchange {
 

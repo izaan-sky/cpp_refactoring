@@ -1,5 +1,6 @@
 #include "divergentchange/CustomerService.h"
 #include "divergentchange/EmailValidation.h"
+#include "divergentchange/StringManipulation.h"
 
 #include <cctype>
 
