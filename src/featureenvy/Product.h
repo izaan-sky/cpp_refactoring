@@ -6,8 +6,6 @@ class Product {
 public:
     Product(double price, bool onSale);
 
-    double getPrice() const;
-    bool isOnSale() const;
     double calculateFinalPrice() const;
 
 private:
