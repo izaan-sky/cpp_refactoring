@@ -11,9 +11,6 @@ public:
     std::string formatDisplayName(const std::string& firstName, const std::string& lastName) const;
     int calculateLoyaltyPoints(int numberOfPurchases) const;
     std::string determineAccountStatus(int daysSinceLastLogin) const;
-
-private:
-    StringManipulation m_stringManipulation;
 };
 
 } // namespace refactoring::divergentchange
