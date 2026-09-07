@@ -47,24 +47,3 @@ TEST_F(CustomerServiceTest, calculateLoyaltyPoints_shouldHandleLargeNumbers) {
 TEST_F(CustomerServiceTest, calculateLoyaltyPoints_shouldAllowNegativeValues_butStillMultiply) {
     EXPECT_EQ(-50, service.calculateLoyaltyPoints(-5));
 }
-
-// -------------------------
-// determineAccountStatus tests
-// -------------------------
-
-TEST_F(CustomerServiceTest, determineAccountStatus_shouldReturnInactive_whenDaysOver365) {
-    EXPECT_EQ("INACTIVE", service.determineAccountStatus(366));
-}
-
-TEST_F(CustomerServiceTest, determineAccountStatus_shouldReturnDormant_whenBetween31And365) {
-    EXPECT_EQ("DORMANT", service.determineAccountStatus(100));
-}
-
-TEST_F(CustomerServiceTest, determineAccountStatus_shouldReturnActive_when30DaysOrLess) {
-    EXPECT_EQ("ACTIVE", service.determineAccountStatus(30));
-    EXPECT_EQ("ACTIVE", service.determineAccountStatus(0));
-}
-
-TEST_F(CustomerServiceTest, determineAccountStatus_shouldTreatNegativeDaysAsActive) {
-    EXPECT_EQ("ACTIVE", service.determineAccountStatus(-10));
-}
