@@ -13,9 +13,9 @@ bool Product::isOnSale() const {
 }
 
 double Product::calculateFinalPrice() const {
-    double price = getPrice();
+    double price = price_;
 
-    if (isOnSale()) {
+    if (onSale_) {
         price = price * 0.8;
     }
 
