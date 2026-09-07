@@ -7,10 +7,6 @@ namespace refactoring::divergentchange {
 
 namespace {
 
-std::string trim(const std::string& s) {
-    return StringManipulation::trim(s);
-}
-
 std::string toUpper(const std::string& s) {
     return StringManipulation::toUpper(s);
 }
