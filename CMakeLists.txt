@@ -16,6 +16,7 @@ FetchContent_MakeAvailable(googletest)
 add_library(refactoring_core
     src/comments/MathematicalOperations.cpp
     src/divergentchange/CustomerService.cpp
+    src/divergentchange/DisplayName.h
     src/divergentchange/EmailValidation.h
     src/divergentchange/StringManipulation.h
     src/divergentchange/AccountStatus.h
