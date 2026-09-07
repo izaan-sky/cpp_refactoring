@@ -1,7 +1,9 @@
 #include "divergentchange/CustomerService.h"
+
+#include "divergentchange/AccountStatus.h"
+#include "divergentchange/DisplayName.h"
 #include "divergentchange/EmailValidation.h"
 #include "divergentchange/StringManipulation.h"
-#include "divergentchange/AccountStatus.h"
 
 #include <cctype>
 
