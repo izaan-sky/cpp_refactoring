@@ -18,6 +18,7 @@ add_library(refactoring_core
     src/divergentchange/CustomerService.cpp
     src/divergentchange/EmailValidation.h
     src/divergentchange/StringManipulation.h
+    src/divergentchange/AccountStatus.h
     src/duplication/Forecast.cpp
     src/duplication/WeatherReport.cpp
     src/featureenvy/Product.cpp
