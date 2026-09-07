@@ -5,14 +5,6 @@
 
 namespace refactoring::divergentchange {
 
-namespace {
-
-std::string toUpper(const std::string& s) {
-    return StringManipulation::toUpper(s);
-}
-
-} // namespace
-
 bool CustomerService::isValidEmail(const char* email) const {
     if (email == nullptr) {
         return false;
