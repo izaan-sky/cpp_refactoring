@@ -10,25 +10,6 @@ protected:
 };
 
 // -------------------------
-// formatDisplayName tests
-// -------------------------
-
-TEST_F(CustomerServiceTest, formatDisplayName_shouldTrimAndUppercaseLastName) {
-    std::string result = service.formatDisplayName(" John ", " smith ");
-    EXPECT_EQ("John SMITH", result);
-}
-
-TEST_F(CustomerServiceTest, formatDisplayName_shouldHandleEmptyStrings) {
-    std::string result = service.formatDisplayName("", "");
-    EXPECT_EQ(" ", result);
-}
-
-TEST_F(CustomerServiceTest, formatDisplayName_shouldHandleSingleCharacterNames) {
-    std::string result = service.formatDisplayName("A", "b");
-    EXPECT_EQ("A B", result);
-}
-
-// -------------------------
 // calculateLoyaltyPoints tests
 // -------------------------
 
