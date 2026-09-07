@@ -38,6 +38,7 @@ add_executable(refactoring_tests
     tests/comments/MathematicalOperationsTest.cpp
     tests/divergentchange/AccountStatusTest.cpp
     tests/divergentchange/CustomerServiceTest.cpp
+    tests/divergentchange/DisplayNameTest.cpp
     tests/divergentchange/EmailValidationTest.cpp
     tests/duplication/WeatherReportTest.cpp
     tests/featureenvy/PriceCalculatorTest.cpp
