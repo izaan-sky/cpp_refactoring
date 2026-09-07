@@ -7,7 +7,7 @@
 class DisplayName
 {
 public:
-    std::string format(const std::string& firstName, const std::string& lastName) const {
+    static std::string format(const std::string& firstName, const std::string& lastName) {
         return StringManipulation::trim(firstName) + " " + StringManipulation::toUpper(StringManipulation::trim(lastName));
     }
 };
