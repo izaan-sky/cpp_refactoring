@@ -16,6 +16,7 @@ FetchContent_MakeAvailable(googletest)
 add_library(refactoring_core
     src/comments/MathematicalOperations.cpp
     src/divergentchange/CustomerService.cpp
+    src/divergentchange/StringManipulation.h
     src/duplication/Forecast.cpp
     src/duplication/WeatherReport.cpp
     src/featureenvy/Product.cpp
