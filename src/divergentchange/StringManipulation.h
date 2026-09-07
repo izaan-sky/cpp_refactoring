@@ -12,4 +12,11 @@ class StringManipulation {
             auto end = s.find_last_not_of(" \t\n\r\f\v");
             return s.substr(start, end - start + 1);
         }
+
+        static std::string toUpper(const std::string& s) {
+            std::string result = s;
+            std::transform(result.begin(), result.end(), result.begin(),
+                    [](unsigned char c) { return static_cast<char>(std::toupper(c)); });
+            return result;
+        }
 };

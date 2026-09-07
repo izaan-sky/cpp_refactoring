@@ -13,10 +13,7 @@ std::string trim(const std::string& s) {
 }
 
 std::string toUpper(const std::string& s) {
-    std::string result = s;
-    std::transform(result.begin(), result.end(), result.begin(),
-            [](unsigned char c) { return static_cast<char>(std::toupper(c)); });
-    return result;
+    return StringManipulation::toUpper(s);
 }
 
 } // namespace
