@@ -35,6 +35,7 @@ enable_testing()
 add_executable(refactoring_tests
     tests/comments/MathematicalOperationsTest.cpp
     tests/divergentchange/CustomerServiceTest.cpp
+    tests/divergentchange/EmailValidationTest.cpp
     tests/duplication/WeatherReportTest.cpp
     tests/featureenvy/PriceCalculatorTest.cpp
     tests/longmethod/OrderTest.cpp
