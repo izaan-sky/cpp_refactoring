@@ -1,6 +1,5 @@
 #include "divergentchange/CustomerService.h"
 
-#include <algorithm>
 #include <cctype>
 #include <regex>
 
